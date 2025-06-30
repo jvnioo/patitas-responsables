@@ -11,8 +11,7 @@ export default defineConfig({
   },
   server: {
     port: 3000
-  }
+  },
+  // Descomenta la siguiente línea si vas a usar GitHub Pages
+  // base: '/patitas-responsables/'
 })
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/patitas-responsables/' : '/'
-} 
