@@ -33,23 +33,26 @@
                 </li>
                 <li class="list-group-item">
                   <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                  Sé consistente con las órdenes y señales
-                </li>
-                <li class="list-group-item">
-                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
                   Entrena en un ambiente sin distracciones
                 </li>
                 <li class="list-group-item">
                   <i class="bi bi-check-circle-fill text-primary me-2"></i>
                   Ten paciencia y celebra los pequeños avances
                 </li>
+                <li class="list-group-item">
+                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                  Utiliza siempre las mismas palabras para cada orden
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                  Observa el lenguaje corporal de tu mascota para entender su estado de ánimo
+                </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               class="img-fluid rounded shadow" alt="Adiestramiento de mascotas">
+          <img src="@/assets/chuli.png" class="img-fluid rounded shadow" alt="Adiestramiento de mascotas">
         </div>
       </div>
 
@@ -137,7 +140,7 @@
           </div>
         </div>
         <div class="col-md-6 order-md-1">
-          <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+          <img src="https://t2.ea.ltmcdn.com/es/posts/5/3/1/tecnicas_de_adiestramiento_canino_21135_orig.jpg" 
                class="img-fluid rounded shadow" alt="Comandos básicos">
         </div>
       </div>
