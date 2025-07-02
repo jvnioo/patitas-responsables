@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="hero-section">
-      <img src="/HeroSection/slide1.png" alt="Hero Image" class="hero-image">
+      <img src="/HeroSection/1.png" alt="Hero Image" class="hero-image">
       <div class="hero-overlay">
         <router-link to="/galeria" class="btn btn-primary btn-lg">
           Comenzar
@@ -76,15 +76,67 @@
       </div>
     </div>
 
-  
-    <!-- Call to Action -->
-    
+    <!-- Valoración y Comentarios -->
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h3 class="card-title text-center mb-4">¡Valora y recomienda Patitas Responsables!</h3>
+              <!-- Valoración de estrellas -->
+              <div class="d-flex justify-content-center mb-3">
+                <span v-for="star in 5" :key="star" @click="setRating(star)" style="cursor:pointer; font-size:2rem; color:#ff69b4;">
+                  <i :class="star <= rating ? 'bi bi-star-fill' : 'bi bi-star'" />
+                </span>
+              </div>
+              <p class="text-center mb-4">Tu valoración: <span class="fw-bold">{{ rating }} / 5</span></p>
+              <!-- Comentarios -->
+              <form @submit.prevent="addComment">
+                <div class="mb-3">
+                  <label for="comment" class="form-label">Deja tu comentario o recomendación:</label>
+                  <textarea id="comment" v-model="newComment" class="form-control" rows="2" maxlength="200" placeholder="Escribe aquí..." required></textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </form>
+              <div v-if="comments.length" class="mt-4">
+                <h5 class="mb-3">Comentarios recientes:</h5>
+                <ul class="list-group">
+                  <li v-for="(comment, idx) in comments" :key="idx" class="list-group-item">
+                    <i class="bi bi-chat-left-quote text-primary me-2"></i>{{ comment }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  data() {
+    return {
+      rating: 0,
+      newComment: '',
+      comments: []
+    }
+  },
+  methods: {
+    setRating(star) {
+      this.rating = star;
+    },
+    addComment() {
+      if (this.newComment.trim()) {
+        this.comments.unshift(this.newComment.trim());
+        this.newComment = '';
+      }
+    }
+  }
 }
 </script>
 
@@ -190,5 +242,28 @@ export default {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.card-title {
+  color: #ff69b4;
+  font-weight: 600;
+}
+.bi-star,
+.bi-star-fill {
+  transition: color 0.2s;
+}
+.bi-star:hover,
+.bi-star-fill:hover {
+  color: #ff1493;
+}
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.3rem;
+  }
 }
 </style> 

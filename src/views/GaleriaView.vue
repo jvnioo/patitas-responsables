@@ -15,7 +15,7 @@ export default {
   name: 'GaleriaView',
   data() {
     return {
-      images: Array.from({ length: 25 }, (_, i) => `slide${i + 1}.png`),
+      images: Array.from({ length: 25 }, (_, i) => `${i + 1}.png`),
       isMobile: window.innerWidth <= 768
     }
   },
